@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Space Wars</span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/spaceships">Spaceships</button>
+    <button mat-button (click)="goBack()">
+      <mat-icon>assignment_return</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div style="padding: 20px;">
+<mat-card>
+<router-outlet>
+</router-outlet>
+</mat-card>
+</div>

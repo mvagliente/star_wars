@@ -1,0 +1,58 @@
+<h2>Pilot Detail</h2>
+<hr>
+<br>
+<div *ngIf="visible">
+<mat-list>
+  <mat-list-item> <b class="titlelist"> Name:  </b> {{detail.name}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Height:  </b> {{detail.height}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Mass:  </b> {{detail.mass}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Hair Color:  </b> {{detail.hair_color}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Skin Color:  </b> {{detail.skin_color}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Eye Color:  </b> {{detail.eye_color}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Birth Year:  </b> {{detail.birth_year}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Gender:  </b> {{detail.gender}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Homeworld:  </b> {{detail.homeworld}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Created:  </b> {{detail.created | date: 'dd/MM/yyyy'}}} </mat-list-item>
+  <mat-list-item> <b class="titlelist"> Edited:  </b> {{detail.edited| date: 'dd/MM/yyyy'}}} </mat-list-item>
+ </mat-list>
+
+ <div #films *ngIf="detail.films.length > 0">
+  <br>
+  <hr>
+  <h3>Films</h3>
+  <mat-list>
+      <mat-list-item *ngFor="let film of detail.films let i = index"> {{film}}  </mat-list-item>
+  </mat-list>
+ </div>
+
+ <div #species *ngIf="detail.species.length > 0">
+  <br>
+  <hr>
+  <h3>Species</h3>
+  <mat-list>
+      <mat-list-item *ngFor="let spe of detail.species let i = index"> {{spe}}  </mat-list-item>
+  </mat-list>
+ </div>
+
+ <div #vehicles *ngIf="detail.vehicles.length > 0">
+  <br>
+  <hr>
+  <h3>Vehicles</h3>
+  <mat-list>
+      <mat-list-item *ngFor="let ve of detail.vehicles let i = index"> {{ve}}  </mat-list-item>
+  </mat-list>
+ </div>
+
+ <div #starships *ngIf="detail.starships.length > 0">
+  <br>
+  <hr>
+  <h3>Starships</h3>
+  <mat-list>
+      <mat-list-item *ngFor="let st of detail.starships let i = index"> {{st}}  </mat-list-item>
+  </mat-list>
+ </div>
+
+</div>
+<div mat-dialog-actions style="margin:auto">
+  <button mat-button mat-dialog-close class="btn btn-secondary">Cerrar</button>
+</div>

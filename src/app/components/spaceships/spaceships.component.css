@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+  }
+
+  .mat-expansion-panel
+  {
+      background-color: #c2185b;
+  }
+
+  .mat-button.mat-warn, .mat-icon-button.mat-warn, .mat-stroked-button.mat-warn
+  {
+    background-color: white;
+  }
+
+  .titlelist
+  {
+      margin-right: 5px;
+  }

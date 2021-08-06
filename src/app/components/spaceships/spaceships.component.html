@@ -1,0 +1,55 @@
+<br>
+<h2>List of Spaceships</h2>
+<hr>
+<div class='table-responsive mat-elevation-z8' *ngIf="visible">
+    <table matSort mat-table [dataSource]="dataSource"> 
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="sw">
+        <td mat-cell *matCellDef="let element" style="width: 100%;" >
+          <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <b>{{element.name}}</b>
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{element.model}} - {{element.manufacturer}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <mat-list>
+                <mat-list-item> <b class="titlelist"> Cost in Credits:  </b> {{element.cost_in_credits}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Length:  </b> {{element.length}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Max Atmosphering Speed:  </b> {{element.max_atmosphering_speed}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Crew:  </b> {{element.crew}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Passengers:  </b> {{element.passengers}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Cargo Capacity:  </b> {{element.cargo_capacity}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Consumables:  </b> {{element.consumables}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Hyperdrive Rating:  </b> {{element.hyperdrive_rating}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> MGLT:  </b> {{element.MGLT}} </mat-list-item>
+                <mat-list-item> <b class="titlelist"> Starship Class:  </b> {{element.starship_class}} </mat-list-item>
+               </mat-list>
+               
+               <div #pilotsdiv *ngIf="element.pilots.length > 0">
+                <br>
+                <hr>
+                <h3>Pilots</h3>
+                <mat-list>
+                    <mat-list-item *ngFor="let pilot of element.pilots let i = index">  <button mat-stroked-button color="warn" (click)="openDialogPilot(pilot)">Show Details of Pilot {{i+1}}</button> </mat-list-item>
+                </mat-list>
+               </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </td>
+      </ng-container>
+    
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    
+    </table>
+    <mat-paginator [pageSizeOptions]="[25, 50, 100]"></mat-paginator>
+    </div>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+        <p style="color: white">loading...</p>  
+    </ngx-spinner> 

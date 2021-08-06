@@ -1,0 +1,18 @@
+.containerini
+{
+    margin: auto;
+    width: 100%;
+    height: 500px;
+}
+
+h1
+{
+text-align: center;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+img{
+    border: yellow 2px solid;
+}
